@@ -1,0 +1,27 @@
+extends layout
+head
+  block style
+    //- The page style which holds codes that we use in add plants page
+    link(href='/stylesheets/create.css', rel='stylesheet')
+
+block content
+  main
+    h1 Create a List
+    .wrapper
+      canvas#c(style="display: none")
+      form#addPlantForm(action="/create", method="POST")
+        span What is the name of the list?
+        input#name(name="name" type="text" placeholder="")
+        span What display picture would you like to use?
+        lable(for="letter")
+          .file-upload
+            img#mypic(src='#{letter}', width=300, height=300)
+            input(type="file"  id="letter" accept="image/png, image/gif, image/jpeg")
+          //- input#imageData(name="imageData" type="hidden")
+        span Who is going to be on the list?
+        textarea#description(name="description" placeholder="Description")
+        input(type="submit" value="DONE")
+
+        //- Call function
+        script.
+          addUploadListener();

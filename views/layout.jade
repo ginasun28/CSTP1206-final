@@ -1,0 +1,31 @@
+html(lang='en', dir='ltr', ng-app='kitchensink')
+  head
+    title=title
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    //- Main layout design which holds our header and footer html code that we extend to each page   
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    script(src='/javascript/client.js')
+
+    //- Other pages style content
+    block style
+
+  body
+    //- Header
+    header
+      nav
+        ul
+          li
+            a(href='/login') Sencent Santa     
+          li
+            if user
+              a(href='/logout') Logout
+              //- img#signout(src="/image/login-image.png" width="30px" height="30px")
+            else
+              a(href='/login')
+                //- img(src='https://img.icons8.com/pastel-glyph/30/000000/gender-neutral-user.png')       
+          
+    //- Other pages content
+    block content

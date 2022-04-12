@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background: #D8E3E4;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav li {
+   display: inline-block;
+}
+
+header nav a {
+    text-decoration: none;
+    display: block;
+    color: black;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 80px;
+    font-size: 20px;
+    font-family: 'Gudea';
+    font-weight: 100;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}

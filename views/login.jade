@@ -1,0 +1,27 @@
+extends layout
+
+head
+  block style
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- The page style which holds codes that we use in login page
+    link(rel='stylesheet', href='/stylesheets/setting.css')
+
+block content
+  //- img.left-img(src="/image/left-img.png", alt="left-img", width='250px', height='680px')
+  main
+    .wrapper
+      form.box(action='/login', method='post')
+        h1 LOG IN
+        
+        input(type="hidden",name="_method", value="PUT")
+        if message 
+          p#error-message #{message}
+        span What is your username?
+        input#email(type='email', name='email', placeholder='EMAIL')
+        span Silently type in your password?
+        input#password(type='password', name='password', placeholder='PASSWORD')   
+        input#ligin-btn(type='submit', name='', value='Log In' )
+        span.or or
+        .moreplants-btn
+          a(href="/signup" , style='display:inline-block;float: right;') Sign Up
