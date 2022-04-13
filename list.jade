@@ -1,0 +1,41 @@
+extends layout
+
+head
+  block style
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- The page style which holds codes that we use in my plants page
+    link(rel='stylesheet', href='/stylesheets/list.css')
+
+//- my plant page content
+block content
+  main
+    .title-name
+      h1 List
+    .arid-container
+      each list in lists
+        .arid-item
+            .name
+              h4 #{list.name}
+                .logo
+                  img(src="/image/login-img.png", alt="login-img", widht= 30, height=30)
+            .img-background
+                img(src="#{list.image}")
+            .view-btn 
+              a(href='/viewlist') View
+    .wrapper
+      form#add-list(action="/addplants", method="POST")
+        h4 Add New List
+          .logo
+            img(src="/image/login-img.png", alt="login-img", widht= 30, height=30)
+          .file-upload
+            a.icon(href="/create")
+              img(src='/image/plus.png', widht=60, height=60)
+          .btn
+            .create
+              a(href="/create") Create
+
+  //- Call function
+  script.
+    addUploadListener();
+    

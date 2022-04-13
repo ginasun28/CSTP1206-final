@@ -1,0 +1,31 @@
+extends layout
+
+head
+    block style
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        //- The page style which holds codes that we use in sign up page
+        link(rel='stylesheet' href='/stylesheets/setting.css')
+        script(src="/javascript/clinet.js")
+
+block content
+    //- Call the founction to verify that the account is available and meets the settings
+    script.
+        function validateForm(){ return validatePassword(false);}
+    main
+      .wrapper2
+        form#signup.box2(action='/signup' method='post' onsubmit="return validateForm()")
+          h1 SIGN UP
+          input(type="hidden",name="_method", value="PUT")
+          if message 
+            p #{message}
+          p#error-message
+          input#email(type='email' name='email' placeholder='Email')          
+          input#password(type='password' name='password' placeholder='Password')        
+          input#conf-password(type='password' name='conf-password' placeholder='Confirm Password')
+          .button
+            input#signup-btn(type='submit' value='SIGN UP')
+            span or
+            .moreplants-btn
+              a(href="/login") Log In
+

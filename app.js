@@ -3,26 +3,16 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const session = require('express-session')
+const session = require('express-session');
 
 const app = express();
 app.use(session({ secret: 'SECRET' }));
-// app.set('trust proxy', 1) // trust first proxy
-// app.use(session({
-//   secret: 'keyboard cat',
-//   resave: true,
-//   saveUninitialized: true,
-//   cookie: { secure: true }
-// }));
 
 // Call each page router
 const loginRouter = require('./routes/login');
 const signupRouter = require('./routes/signup');
-// const plantsfinderRouter = require('./routes/plantsfinder');
-// const plantscareRouter = require('./routes/plantscare');
 const listsRouter = require('./routes/list');
 const createRouter = require('./routes/create');
-// const editplantsRouter = require('./routes/editplants');
 const signoutRouter = require('./routes/signout');
 
 // view engine setup
@@ -41,15 +31,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Run each page
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
-// app.use('/plantsfinder', plantsfinderRouter);
-// app.use('/plantscare', plantscareRouter);
 app.use('/list', listsRouter);
 app.use('/create', createRouter);
-// app.use('/editplants', editplantsRouter);
 app.use('/signout', signoutRouter);
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("login");
 });
 
 // catch 404 and forward to error handler

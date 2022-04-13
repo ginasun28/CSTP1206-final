@@ -65,7 +65,7 @@ img {
     background: none;
 }
 
-#addPlantForm input[type = "text"] {
+#addListForm input[type = "text"] {
     border: 0;
     display: block;
     margin: 20px auto;
@@ -80,7 +80,7 @@ img {
 }
 
 #description {
-    height: 200px;
+    /* height: 50x; */
     border: 0;
     display: block;
     margin: 20px auto;
@@ -94,7 +94,7 @@ img {
     font-family: 'Gudea';
 }
 
-#addPlantForm input[type = "submit"] {
+#addListForm input[type = "submit"] {
     border: 0;
     display: block;
     margin: 25px auto;
